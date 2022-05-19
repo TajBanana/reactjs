@@ -1,7 +1,7 @@
-import ExpenseItem from "./expenseItem/ExpenseItem";
+import ExpenseItem from "./ExpenseItem";
 import "./Expenses.css"
 import Card from "../Card";
-import ExpensesFilter from "./expensesFilter/ExpenseFilter";
+import ExpensesFilter from "./ExpenseFilter";
 import {useState} from "react";
 
 const Expenses = (props) => {
