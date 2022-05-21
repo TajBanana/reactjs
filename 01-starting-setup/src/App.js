@@ -1,5 +1,5 @@
-import Expenses from "./components/expenses/Expenses";
-import NewExpense from "./components/newexpense/NewExpense";
+import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 import {useState} from "react";
 
 const MOCK_EXPENSES = [
@@ -38,8 +38,7 @@ const App = () => {
         <div>
             <h2>Expense tracker</h2>
             <h2>Consolidated</h2>
-            <NewExpense
-                onAppSaveExpenseData={saveExpenseDataHandler}></NewExpense>
+            <NewExpense onAppSaveExpenseData={saveExpenseDataHandler}/>
             <Expenses itemList={expenses}/>
         </div>
     );
