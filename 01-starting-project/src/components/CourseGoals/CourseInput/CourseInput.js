@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 import Button from '../../UI/Button/Button';
-import styles  from './CourseInput.module.css'
+import styles from './CourseInput.module.css'
 // import styled from "styled-components";
 //
 // const FormControl = styled.div`
@@ -54,14 +54,14 @@ const CourseInput = props => {
 
   return (
       <form onSubmit={formSubmitHandler}>
-        <div
+        <div style={{justifyContent: "space-between"}}
             // className={!isValid && 'invalid'}
             // inValid={!isValid}
-            >
-          <label>Course Goal</label>
-          <input type="text" onChange={goalInputChangeHandler}/>
+        >
+            <label>Course Goal</label>
+            <input type="text" onChange={goalInputChangeHandler}/>
+          <Button type="submit">Add Goal</Button>
         </div>
-        <Button type="submit">Add Goal</Button>
       </form>
   );
 };
