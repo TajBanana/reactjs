@@ -3,20 +3,28 @@ import Card from "./components/Card/Card";
 
 
 const App = () => {
-  const[userList, setUserList] = useState([
-      '123','345'
-  ])
+  const MOCK_USERS = [
+    {name: "Jack", age: "12",key:'1'},
+    {name: "Young", age: "88",key:'2'}
+  ];
+  const [userList, setUserList] = useState(MOCK_USERS);
+
+  const saveUserList = (user) => {
+    setUserList((prevState) => {
+      return [user, ...prevState];
+    })
+  }
 
   return (
       <div>
         <div>
-          <Card/>
+          <Card addToList={saveUserList}/>
         </div>
         <div>
-          {userList.map(username =>(
-              <li>
-                {username}
-              </li>
+          {userList.map(user => (
+                  <li key={user.key}>
+                    {user.name} + ({user.age} years old)
+                  </li>
               )
           )}
         </div>

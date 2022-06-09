@@ -1,4 +1,4 @@
-import Inputs from "../User/User";
+import NewUser from "../Users/NewUser";
 import styled from "styled-components";
 
 const CardContent = styled.div`
@@ -8,9 +8,14 @@ const CardContent = styled.div`
 `
 
 const Card = (props) => {
+  const addUserHandler = (enteredUser) => {
+    console.log(enteredUser);
+    props.addToList(enteredUser);
+  }
+
     return (
-        <CardContent>
-            <Inputs/>
+        <CardContent >
+            <NewUser onAddUser={addUserHandler}/>
         </CardContent>
     )
 }
