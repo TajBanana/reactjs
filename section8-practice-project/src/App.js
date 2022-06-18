@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import Card from "./components/Card/Card";
+import NewUser from "./components/Users/NewUser";
+import UsersList from "./components/Users/UsersList";
 
 
 const App = () => {
@@ -7,27 +8,18 @@ const App = () => {
     {name: "Jack", age: "12",key:'1'},
     {name: "Young", age: "88",key:'2'}
   ];
-  const [userList, setUserList] = useState(MOCK_USERS);
+  const [usersList, setUsersList] = useState(MOCK_USERS);
 
   const saveUserList = (user) => {
-    setUserList((prevState) => {
-      return [user, ...prevState];
+    setUsersList((prevUsersList) => {
+      return [...prevUsersList, user];
     })
   }
 
   return (
       <div>
-        <div>
-          <Card addToList={saveUserList}/>
-        </div>
-        <div>
-          {userList.map(user => (
-                  <li key={user.key}>
-                    {user.name} + ({user.age} years old)
-                  </li>
-              )
-          )}
-        </div>
+        <NewUser onSaveuser={saveUserList}/>
+        <UsersList users={usersList}/>
       </div>
 
   );
