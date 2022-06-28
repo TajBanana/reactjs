@@ -1,8 +1,8 @@
 import {useState} from "react";
-import Card from "../UI/Card";
-import classes from './NewUser.module.css'
-import Button from "../UI/Button";
-import ErrorModal from "../UI/ErrorModal";
+import Card from "/src/components/UI/Card";
+import classes from '/src/components/Users/NewUser.module.css'
+import Button from "/src/components/UI/Button";
+import ErrorModal from "/src/components/UI/ErrorModal";
 
 const NewUser = (props) => {
 
